@@ -1,0 +1,137 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/flexbox.css">
+</head>
+
+<body>
+
+  <header class="main-header"> <!-- ///////////////////////////////////////////// top header of my site -->
+    <div class="header-wrapper">    <!-- top header containing logo, nav, account and cart -->
+      <div class="header-logo">      <!-- logo in header -->
+        <a href="index.html">
+        <!-- <img class="logo-img" src="img/home-logo.png" alt="logo on top left">  -->
+        </a>
+      </div>
+      <div class="main-nav">       <!-- //////////////////////////////////Main navigation on top -->
+        <!-- <a class="shop-button" href="products.html"> Shop</a> -->
+        <!-- <a class="account-button" href="login.html" id="MyAccount"> My Account</a> -->
+      </div>      <!-- //////////////////////////////////Main navigation on top closed -->
+    </div>     <!-- top header containing logo, nav, account and cart  closed -->
+  </header>   <!-- ///////////////////////////////////////////// top header of my site closed-->
+
+
+  <div class="home-wrapper"> <!-- a section containing products and tabs -->
+    <div class="home-products-wrapper"> <!-- a section containing only products  -->
+      <div class="home-products-text">
+        <h1>SALEH EBRAHIMZADEH</h1>
+        <h2>game designer</h2>
+        <h6 style="color:rgb(255, 255, 255)">This is Saleh: Passionate about programming languages such as Java and C#, Video Games, Smart Phones, and tech as much as graphic design, user experience and interface design.
+          I enjoy making 3d models such as cars, houses and 3 dimensional objects with Maya and 3D Max.
+          I always thought I need to choose between graphic design and programming, until I got introduced to SFU SIAT program, where I found out that programming and graphic design are closely correlated and complement each other.
+          I spent couple of years working with Android Studio and Unity Game Engine and came up with remarkable projects which I would be happy to share with you.</h6>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-wrapper"> <!-- a section containing products and tabs -->
+    <div class="home-products-wrapper"> <!-- a section containing only products  -->
+      <div class="home-products first-item">
+      <a href="">
+        <div class="overlay">
+       <img class="overlay" src='img/products/myprojectsample1.png'/>
+       </div>
+      </a>
+      <h4 class="top-margin-0" style="color:white">IAT 410 project</h4>
+      </div>
+      <div class="home-products">
+        <a href="">
+          <div class="overlay">
+            <img class="overlay" src='img/products/sample3.png'/>
+            </div>
+       </a>
+       <h4 class="top-margin-0" style="color:white">GoogleStore Project</h4>
+      </div>
+
+      <div class="home-products">
+        <a href="">
+          <div class="overlay">
+            <img class="overlay" src='img/products/sample2.png'/>
+            </div>
+       </a>
+       <h4 class="top-margin-0" style="color:white">GoogleStore Project</h4>
+      </div>
+      
+     
+    </div>
+  </div>
+
+  <footer class="footer-container">  <!-- ///////////////////////////////////////////////Footer -->
+    <div class="footer-contents">       <!-- all info, address and links in the footer -->
+    
+      <ul class="footer-address">
+        <h3> Address </h3>
+        <li><p id="address">Fullerton Avenue <br>North Vancouver <br>British Columbia <br>Canada</p></li>
+      </ul>
+      <ul class="footer-Contact">
+        <h3> Contact Me </h3>
+        <li><a href="mailto:salehe@sfu.ca.com">Email: salehe@sfu.ca</a></li>
+        <li><a href="tel:+16047792949">604-779-0000</a></li>
+      </ul>
+    </div>
+  </footer>   <!-- ///////////////////////////////////////////////Footer closed-->
+  <!-- <script src="js/javascript.js"></script> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <script src="js/jquery.ripples.js"></script>
+  <script>
+  $(document).ready(function() {
+  	try {
+  		$('body').ripples({
+  			resolution: 512,
+  			dropRadius: 20, //px
+  			perturbance: 0.04,
+  		});
+  		$('main').ripples({
+  			resolution: 128,
+  			dropRadius: 10, //px
+  			perturbance: 0.04,
+  			interactive: false
+  		});
+  	}
+  	catch (e) {
+  		$('.error').show().text(e);
+  	}
+
+  	$('.js-ripples-disable').on('click', function() {
+  		$('body, main').ripples('destroy');
+  		$(this).hide();
+  	});
+
+  	$('.js-ripples-play').on('click', function() {
+  		$('body, main').ripples('play');
+  	});
+
+  	$('.js-ripples-pause').on('click', function() {
+  		$('body, main').ripples('pause');
+  	});
+
+  	// Automatic drops
+  	setInterval(function() {
+  		var $el = $('main');
+  		var x = Math.random() * $el.outerWidth();
+  		var y = Math.random() * $el.outerHeight();
+  		var dropRadius = 20;
+  		var strength = 0.04 + Math.random() * 0.04;
+
+  		$el.ripples('drop', x, y, dropRadius, strength);
+  	}, 400);
+  });
+  </script>
+
+</body>
+</html>
